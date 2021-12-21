@@ -21,9 +21,20 @@ class MessageAnalyzerTest extends TestCase
         $messageAnalyzer = new MessageAnalyzer();
 
         //Act
-        $actual = $messageAnalyzer->getMessagePositivity("Envie de canner");
+        $actual = $messageAnalyzer->getMessagePositivity("La vie est agréable");
 
         //Assert
         $this->assertEquals("correct", $actual);
+    }
+    //Testing possitvity = "bon"
+    public function testGetMessagePositivityGivenStringShouldReturnBon(){
+        //Arrange
+        $messageAnalyzer = new MessageAnalyzer();
+
+        //Act
+        $actual = $messageAnalyzer->getMessagePositivity("C'est super cool! Cette journée sympa est génial");
+
+        //Assert
+        $this->assertEquals("bon", $actual);
     }
 }
