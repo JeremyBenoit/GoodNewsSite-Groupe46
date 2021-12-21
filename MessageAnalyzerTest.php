@@ -59,4 +59,16 @@ class MessageAnalyzerTest extends TestCase
         //Assert
         $this->assertEquals("franchement positif", $actual);
     }
+    //Testing possitvity = "excellent"
+    public function testGetMessagePositivityGivenStringShouldReturnExcellent(){
+        //Arrange
+        $messageAnalyzer = new MessageAnalyzer();
+
+        //Act
+        $actual = $messageAnalyzer->getMessagePositivity("Quel bonheur de voir le beau Quentin. Cela me procure beaucoup de plaisir. C'est vraiment génial. Il est super cool ce type. Par contre il n'est pas tres agréable, positif,bon ");
+
+        //Assert
+        $this->assertEquals("excellent", $actual);
+    }
+
 }
